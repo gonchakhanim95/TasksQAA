@@ -2,6 +2,7 @@ namespace ConditionQ.Tests
 {
     public class Tests
     {
+     
         public class ConditionalTest
         {
             [TestCase(7, 5, 12)]
@@ -12,5 +13,6 @@ namespace ConditionQ.Tests
                 Assert.AreEqual(expected, actual);
             }
         }
+
     }
 }
