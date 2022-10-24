@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConditionQ
+﻿namespace ConditionQ
 {
     public class Conditional
     {
-        public static int MoreLess(int a,int b)
+        public static int MoreLess(int a, int b)
         {
             if (a > b)
             {
@@ -28,20 +22,32 @@ namespace ConditionQ
 
         }
 
-        public static void AscendingOrder(int a, int b, int c)
+        public static int[] AscendingOrder(int a, int b, int c) // с помощью массива
         {
-            if(a>b && a>c && b>c )
+            int[] abc = new int[] { a, b, c };
+            int[] bac = new int[] { b, a, c };
+            int[] cab = new int[] { c, a, b };
+            int[] cba = new int[] { c, b, a };
+            int[] bca = new int[] { b, c, a };
+            if (a > b && a > c && b > c)
             {
-                Console.WriteLine($"{a},{b},{c}");
+                return abc;
             }
-            if(a>c && b>c && b>a)
+            else if (a > c && b > c && b > a)
             {
-                Console.WriteLine($"{b},{a},{c}");
+                return bac;
             }
-            if (c>a && c>b && b>a)
+            else if (c > a && c > b && a > b)
             {
-                Console.WriteLine($"{c},{b},{a}");
+                return cab;
             }
+            else if (c > b && c > a && b > a)
+            {
+                return cba;
+            }
+            else
+                return bca;
         }
+
     }
 }
